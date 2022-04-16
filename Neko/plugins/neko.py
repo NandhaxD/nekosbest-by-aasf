@@ -574,7 +574,7 @@ def waifu(_, message):
     )
 
 @bot.on_message(filters.regex("Neko kitsune") & filters.command("kitsune"))
-def waifu(_, message):
+def kitsune(_, message):
     name = message.from_user.first_name         
     url = f"https://nekos.best/api/v2/kitsune"
     r = requests.get(url)
