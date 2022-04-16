@@ -19,5 +19,3 @@ bot = Client(
     bot_token = TOKEN,
     plugins=dict(root=f"{__name__}/plugins/")
 )
-
-bot.run()
