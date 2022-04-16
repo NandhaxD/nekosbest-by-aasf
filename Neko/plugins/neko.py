@@ -24,8 +24,6 @@ aasf = (
  "Hello UwU {} I'm here to play, Meow"
 )
 
-
-
 @bot.on_message(filters.regex("Neko kiss") & filters.command("kiss"))
 async def kiss(_, message):
     if message.reply_to_message:
@@ -555,14 +553,35 @@ def slap(_, message):
 
 @bot.on_message(filters.regex("Neko cute") & filters.command("cute"))
 def cute(_, message):
-    
-    name = message.from_user.first_name
-    url = "https://nekos.best/api/v2/neko"
+    name = message.from_user.first_name         
+    url = f"https://nekos.best/api/v2/neko"
     r = requests.get(url)
     e = r.json()
     cuteme = e["results"][0]["url"]
     message.reply_photo(
         cuteme, caption="Thank UwU {}-Kun  *smiles and hides ^~^*".format(name)
+    )
+
+@bot.on_message(filters.regex("Neko waifu") & filters.command("waifu"))
+def waifu(_, message):
+    name = message.from_user.first_name         
+    url = f"https://nekos.best/api/v2/waifu"
+    r = requests.get(url)
+    e = r.json()
+    waifume = e["results"][0]["url"]
+    message.reply_photo(
+        waifume, caption="Here I Am {}-Kun's *Waifu*".format(name)
+    )
+
+@bot.on_message(filters.regex("Neko kitsune") & filters.command("kitsune"))
+def waifu(_, message):
+    name = message.from_user.first_name         
+    url = f"https://nekos.best/api/v2/kitsune"
+    r = requests.get(url)
+    e = r.json()
+    kitsuneme = e["results"][0]["url"]
+    message.reply_photo(
+        kitsuneme, caption="Did You Called Me {}-Kun's *?*".format(name)
     )
 
 @bot.on_message(filters.regex("Neko sleep") | filters.regex("sleep") & filters.command("sleep"))
