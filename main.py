@@ -709,7 +709,7 @@ def help(_, message):
         InlineKeyboardButton("[► Repo ◄]", url="https://github.com/Team-Aasf/Nekos-Best-Bot"),
         InlineKeyboardButton("[► Deploy ◄]", url="https://heroku.com/deploy?template=https://github.com/Team-Aasf/Nekos-Best-Bot")
     ]]
-    await message.reply_photo(pics, caption=help_text,
+    message.reply_photo(pics, caption=help_text,
                              reply_markup=InlineKeyboardMarkup(buttons))
 
 bot.run()
