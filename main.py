@@ -572,7 +572,7 @@ def pat(_, message):
       r = requests.get(url)
       e = r.json()
       patme = e["results"][0]["url"]
-      message.reply_video(patme, caption=randomessage.choice(OWO).format(name))
+      message.reply_video(patme, caption=random.choice(OWO).format(name))
 
 @bot.on_message(filters.regex("Neko hug") & filters.command("hug"))
 def hug(_, message):
