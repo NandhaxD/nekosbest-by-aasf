@@ -1,8 +1,15 @@
 import requests
+import time
 import random
 from Neko import bot
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+
+PM_START_TEXT = """
+**Welcome** {}~kun ฅ(≈>ܫ<≈)
+`I'm A Neko Themed Telegram Bot Using Nekos.best! `
+**Make Your Groups Active By Adding Me There! ××**
+"""
 
 OWO = (
     "*Neko pats {} on the head.",
@@ -651,11 +658,36 @@ def neko(_, message):
         ke.format(name)
     )
 
+@bot.on_message(filters.command(["start"], ["/", ".", "?"]))
+async def start(_, message):
+      buttons = [[
+          InlineKeyboardButton("[► Repo ◄]", url="https://github.com/Team-Aasf/Nekos-Best-Bot"),
+          InlineKeyboardButton("[► Deploy ◄]", url="https://heroku.com/deploy?template=https://github.com/Team-Aasf/Nekos-Best-Bot")
+      ]]
+      url = "https://nekos.best/api/v2/neko"
+      r = requests.get(url)
+      e = r.json()
+      pics = e["results"][0]["url"]
+      kk = await message.reply(text="`ねこねこ`")
+      time.sleep(2)
+      await kk.delete()
+      await message.reply_photo(
+            photo=pics,
+            caption=PM_START_TEXT.format(
+                message.from_user.mention
+            ),
+            reply_markup=InlineKeyboardMarkup(buttons),
+        )
+
 @bot.on_message(filters.command(["help"], ['/', ".", "?"]))
 def help(_, message):
+    url = "https://nekos.best/api/v2/neko"
+    r = requests.get(url)
+    e = r.json()
+    pics = e["results"][0]["url"]
     buttons = [[
-        InlineKeyboardButton("Repo", url="https://github.com/Team-Aasf/Nekos-Best-Bot"),
-        InlineKeyboardButton("Deploy", url="https://heroku.com/deploy?template=https://github.com/Team-Aasf/Nekos-Best-Bot")
+        InlineKeyboardButton("[► Repo ◄]", url="https://github.com/Team-Aasf/Nekos-Best-Bot"),
+        InlineKeyboardButton("[► Deploy ◄]", url="https://heroku.com/deploy?template=https://github.com/Team-Aasf/Nekos-Best-Bot")
     ]]
-    await message.reply_photo(random.choice(IMG), caption=help_text,
+    await message.reply_photo(pics, caption=help_text,
                              reply_markup=InlineKeyboardMarkup(buttons))
