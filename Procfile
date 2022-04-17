@@ -1,1 +1,1 @@
-worker: python3 -m Neko
+worker: python3 -m main
