@@ -3,7 +3,7 @@ import os
 import time
 import random
 from Neko import bot
-from pyrogram import filters, Client, idle
+from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 API_ID = os.environ.get('API_ID', None)
@@ -17,14 +17,11 @@ API_HASH = ""
 TOKEN = ""
 """
 bot = Client(
-    "NekoBest",
-    api_id = API_ID,
-    api_hash = API_HASH,
+    "NekoBest" ,
+    api_id = API_ID ,
+    api_hash = API_HASH ,
     bot_token = TOKEN
 )
-
-bot.run()
-idle()
 
 PM_START_TEXT = """
 **Welcome** {}~kun ฅ(≈>ܫ<≈)
@@ -714,3 +711,5 @@ def help(_, message):
     ]]
     await message.reply_photo(pics, caption=help_text,
                              reply_markup=InlineKeyboardMarkup(buttons))
+
+bot.run()
