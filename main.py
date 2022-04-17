@@ -2,7 +2,6 @@ import requests
 import os
 import time
 import random
-from Neko import bot
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
