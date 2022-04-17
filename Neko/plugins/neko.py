@@ -2,7 +2,7 @@ import requests
 import random
 from Neko import bot
 from pyrogram import filters
-from pyrogram.types import Message
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 OWO = (
     "*Neko pats {} on the head.",
@@ -23,6 +23,41 @@ aasf = (
  "($^$) *money face* {} are you rich UwU?",
  "Hello UwU {} I'm here to play, Meow"
 )
+
+help_text = """
+• **Kiss : **`Neko kiss | /kiss To Kiss A Person`
+• **Highfive : **`Neko highfive | /highfive To Highfive A Person`
+• **Happy : **`Neko happy | /happy To Makes A Person Happy`
+• **Laugh : **`Neko laugh | /laugh To Makes A Person Laugh`
+• **Bite : **`Neko bite | /bite To Bite A Person`
+• **Poke : **`Neko poke | /poke To Poke A Person`
+• **Tickle : **`Neko tickle | /tickle To Tickle A Person`
+• **Wave : **`Neko wave | /wave To Wave A Person`
+• **Thumbsup : **`Neko thumbsup | /thumbsup To Thumbsup A Person`
+• **Stare : **`Neko stare | /stare To Makes A Person Stare`
+• **Cuddle : **`Neko cuddle | /cuddle To Cuddle A Person`
+• **Smile : **`Neko smile | /smile To Makes A Person Smile`
+• **Baka : **`Neko baka | /baka To Say A Person Baka`
+• **Blush : **`Neko blush | /blush To Makes A Person Blush`
+• **Think : **`Neko think | /think To Makes A Person Think`
+• **Pout : **`Neko pout | /pout To Makes A Person Pout`
+• **Facepalm : **`Neko facepalm | /facepalm To Makes A Person Facepalm`
+• **Wink : **`Neko wink | /wink To Makes A Person Wink`
+• **Smug : **`Neko smug | /smug To Makes A Person Smug`
+• **Cry : **`Neko cry | /cry To Makes A Person Cry`
+• **Dance : **`Neko dance | /dance To Makes A Person Dance`
+• **Feed : **`Neko feed | /feed To Feed A Person`
+• **Shrug : **`Neko shrug | /shrug To Shrug A Person`
+• **Bored : **`Neko bored | /bored To Makes A Person Bored`
+• **Pat : **`Neko pat | /pat To Pat A Person`
+• **Hug : **`Neko hug | /hug To Hug A Person`
+• **Slap : **`Neko slap | /slap To Slap A Person`
+• **Cute : **`Neko cute | /cute To Say Me Cute`
+• **Waifu : **`Neko waifu | /waifu To Send Random Waifu Image`
+• **Kitsune : **`Neko kitsune | /kitsune To Send Random Kitsune Image`
+• **Sleep : **`Neko sleep | /sleep To Say I Am Going To Sleep`
+• **Neko : **`Neko | /neko To Get Random Neko quotes`
+"""
 
 @bot.on_message(filters.regex("Neko kiss") & filters.command("kiss"))
 async def kiss(_, message):
@@ -615,3 +650,12 @@ def neko(_, message):
     message.reply_text(
         ke.format(name)
     )
+
+@bot.on_message(filters.command(["help"], ['/', ".", "?"]))
+def help(_, message):
+    buttons = [[
+        InlineKeyboardButton("Repo", url="https://github.com/Team-Aasf/Nekos-Best-Bot"),
+        InlineKeyboardButton("Deploy", url="https://heroku.com/deploy?template=https://github.com/Team-Aasf/Nekos-Best-Bot")
+    ]]
+    await message.reply_photo(random.choice(IMG), caption=help_text,
+                             reply_markup=InlineKeyboardMarkup(buttons))
