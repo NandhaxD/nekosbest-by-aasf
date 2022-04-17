@@ -53,6 +53,8 @@ aasf = (
 )
 
 help_text = """
+• **Start : **`Neko start | /start To Start The Bot`
+• **Help : **`Neko help | /help To Send Help Message`
 • **Kiss : **`Neko kiss | /kiss To Kiss A Person`
 • **Highfive : **`Neko highfive | /highfive To Highfive A Person`
 • **Happy : **`Neko happy | /happy To Makes A Person Happy`
@@ -679,7 +681,7 @@ def neko(_, message):
         ke.format(name)
     )
 
-@bot.on_message(filters.command(["start"], ["/", ".", "?"]))
+@bot.on_message(filters.regex("Neko start") & filters.command("start"))
 async def start(_, message):
       buttons = [[
           InlineKeyboardButton("[► Repo ◄]", url="https://github.com/Team-Aasf/Nekos-Best-Bot"),
@@ -700,7 +702,7 @@ async def start(_, message):
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
-@bot.on_message(filters.command(["help"], ['/', ".", "?"]))
+@bot.on_message(filters.regex("Neko help") & filters.command("help"))
 def help(_, message):
     url = "https://nekos.best/api/v2/neko"
     r = requests.get(url)
