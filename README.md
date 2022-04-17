@@ -26,6 +26,8 @@ python3 -m main
 
 ## Commands
 ```
+• **Start : **`Neko start | /start To Start The Bot`
+• **Help : **`Neko help | /help To Send Help Message`
 • **Kiss : **`Neko kiss | /kiss To Kiss A Person`
 • **Highfive : **`Neko highfive | /highfive To Highfive A Person`
 • **Happy : **`Neko happy | /happy To Makes A Person Happy`
