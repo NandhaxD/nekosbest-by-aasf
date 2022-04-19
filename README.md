@@ -14,8 +14,8 @@
 git clone https://github.com/Team-Aasf/Nekos-Best-Bot
 cd Nekos-Best-Bot
 # Install Packages
-# pip3 install -r requirements.txt
-Edit `main.py` with variables as given below then run bot
+pip3 install -r requirements.txt
+# Edit `main.py` with variables as given below then run bot
 python3 -m main
 </pre>
 </p>
