@@ -5,9 +5,6 @@
   <b>Nekos-Best-Bot</b>
 </h1>
 
-# Credits
-- [Aasf-Cyber-King](https://github.com/Aasfcyberking)
-- [Nekos.Best API](https://github.com/nekos-best)
 ## Deploy
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Team-Aasf/Nekos-Best-Bot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
@@ -61,3 +58,10 @@ python3 -m main
 • **Sleep : **`Neko sleep | /sleep To Say I Am Going To Sleep`
 • **Neko : **`Neko | /neko To Get Random Neko quotes`
 ```
+
+#### Credits
+
+| <a href="https://github.com/AASFCYBERKING" target="_blank">**Kishore**</a> | <a href="https://github.com/nekos-best" target="_blank">**Nekos.Best API**</a> | 
+| :---: |:---:|
+| [![Aasf](https://avatars.githubusercontent.com/u/89995228?s=96&v=4)](https://github.com/AASFCYBERKING)    | [![Neko](https://avatars.githubusercontent.com/u/85041320?s=200&v=4)](https://github.com/nekos-best) |
+| <a href="https://github.com/Team-Aasf/Nekos-Best-Bot/commits?author=AASFCYBERKING" target="_blank">`All Code Of This Bot Is Written By Me ^_^`</a> | <a href="https://github.com/nekos-best" target="_blank">`Base Idea Of Making This Bot`</a> |
