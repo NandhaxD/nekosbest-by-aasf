@@ -1,10 +1,14 @@
 import requests
 import os
 import time
+import logging
 import random
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
 API_ID = os.environ.get('API_ID', None)
 API_HASH = os.environ.get('API_HASH', None)
 TOKEN = os.environ.get('TOKEN', None)
