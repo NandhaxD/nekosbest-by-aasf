@@ -14,11 +14,11 @@ API_HASH = os.environ.get('API_HASH', None)
 TOKEN = os.environ.get('TOKEN', None)
 
 # For Local Deploy:
-"""
-API_ID = ""
-API_HASH = ""
-TOKEN = ""
-"""
+
+API_ID = "14676558"
+API_HASH = "b3c4bc0ba6a4fc123f4d748a8cc39981"
+TOKEN = "5391818261:AAGoqUgChXsoxTF4NDbD788ETPDxpX9Sc-0"
+
 bot = Client(
     "NekoBest" ,
     api_id = API_ID ,
@@ -53,43 +53,43 @@ aasf = (
 )
 
 help_text = """
-• **Start : **`Neko start | /start To Start The Bot`
-• **Help : **`Neko help | /help To Send Help Message`
-• **Kiss : **`Neko kiss | /kiss To Kiss A Person`
-• **Highfive : **`Neko highfive | /highfive To Highfive A Person`
-• **Happy : **`Neko happy | /happy To Makes A Person Happy`
-• **Laugh : **`Neko laugh | /laugh To Makes A Person Laugh`
-• **Bite : **`Neko bite | /bite To Bite A Person`
-• **Poke : **`Neko poke | /poke To Poke A Person`
-• **Tickle : **`Neko tickle | /tickle To Tickle A Person`
-• **Wave : **`Neko wave | /wave To Wave A Person`
-• **Thumbsup : **`Neko thumbsup | /thumbsup To Thumbsup A Person`
-• **Stare : **`Neko stare | /stare To Makes A Person Stare`
-• **Cuddle : **`Neko cuddle | /cuddle To Cuddle A Person`
-• **Smile : **`Neko smile | /smile To Makes A Person Smile`
-• **Baka : **`Neko baka | /baka To Say A Person Baka`
-• **Blush : **`Neko blush | /blush To Makes A Person Blush`
-• **Think : **`Neko think | /think To Makes A Person Think`
-• **Pout : **`Neko pout | /pout To Makes A Person Pout`
-• **Facepalm : **`Neko facepalm | /facepalm To Makes A Person Facepalm`
-• **Wink : **`Neko wink | /wink To Makes A Person Wink`
-• **Smug : **`Neko smug | /smug To Makes A Person Smug`
-• **Cry : **`Neko cry | /cry To Makes A Person Cry`
-• **Dance : **`Neko dance | /dance To Makes A Person Dance`
-• **Feed : **`Neko feed | /feed To Feed A Person`
-• **Shrug : **`Neko shrug | /shrug To Shrug A Person`
-• **Bored : **`Neko bored | /bored To Makes A Person Bored`
-• **Pat : **`Neko pat | /pat To Pat A Person`
-• **Hug : **`Neko hug | /hug To Hug A Person`
-• **Slap : **`Neko slap | /slap To Slap A Person`
-• **Cute : **`Neko cute | /cute To Say Me Cute`
-• **Waifu : **`Neko waifu | /waifu To Send Random Waifu Image`
-• **Kitsune : **`Neko kitsune | /kitsune To Send Random Kitsune Image`
-• **Sleep : **`Neko sleep | /sleep To Say I Am Going To Sleep`
-• **Neko : **`Neko | /neko To Get Random Neko quotes`
+• **Start : **`/start To Start The Bot`
+• **Help : **`/help To Send Help Message`
+• **Kiss : **`/kiss To Kiss A Person`
+• **Highfive : **`/highfive To Highfive A Person`
+• **Happy : **`/happy To Makes A Person Happy`
+• **Laugh : **`/laugh To Makes A Person Laugh`
+• **Bite : **`/bite To Bite A Person`
+• **Poke : **`/poke To Poke A Person`
+• **Tickle : **`/tickle To Tickle A Person`
+• **Wave : **`/wave To Wave A Person`
+• **Thumbsup : **`/thumbsup To Thumbsup A Person`
+• **Stare : **`/stare To Makes A Person Stare`
+• **Cuddle : **`/cuddle To Cuddle A Person`
+• **Smile : **`/smile To Makes A Person Smile`
+• **Baka : **`/baka To Say A Person Baka`
+• **Blush : **`/blush To Makes A Person Blush`
+• **Think : **`/think To Makes A Person Think`
+• **Pout : **`/pout To Makes A Person Pout`
+• **Facepalm : **`/facepalm To Makes A Person Facepalm`
+• **Wink : **`/wink To Makes A Person Wink`
+• **Smug : **`/smug To Makes A Person Smug`
+• **Cry : **`/cry To Makes A Person Cry`
+• **Dance : **`/dance To Makes A Person Dance`
+• **Feed : **`/feed To Feed A Person`
+• **Shrug : **/shrug To Shrug A Person`
+• **Bored : **`/bored To Makes A Person Bored`
+• **Pat : **`/pat To Pat A Person`
+• **Hug : **`/hug To Hug A Person`
+• **Slap : **`/slap To Slap A Person`
+• **Cute : **`/cute To Say Me Cute`
+• **Waifu : **`/waifu To Send Random Waifu Image`
+• **Kitsune : **`/kitsune To Send Random Kitsune Image`
+• **Sleep : **`/sleep To Say I Am Going To Sleep`
+• **Neko : **`/neko To Get Random Neko quotes`
 """
 
-@bot.on_message(filters.regex("Neko kiss") & filters.command("kiss"))
+@bot.on_message(filters.command("kiss"))
 async def kiss(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/kiss"
@@ -108,7 +108,7 @@ async def kiss(_, message):
       await message.reply_video(kissme, caption="*Kisses u with all my love*~")
       return
 
-@bot.on_message(filters.regex("Neko highfive") & filters.command("highfive"))
+@bot.on_message(filters.command("highfive"))
 async def highfive(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/highfive"
@@ -127,7 +127,7 @@ async def highfive(_, message):
       await message.reply_video(highfiveme, caption="*Highfives U With All My Friendship*~")
       return
 
-@bot.on_message(filters.regex("Neko happy") & filters.command("happy"))
+@bot.on_message(filters.command("happy"))
 async def happy(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/happy"
@@ -146,7 +146,7 @@ async def happy(_, message):
       await message.reply_video(happyme, caption="*U So Happy Today But Why*~")
       return
 
-@bot.on_message(filters.regex("Neko laugh") & filters.command("laugh"))
+@bot.on_message(filters.command("laugh"))
 async def laugh(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/laugh"
@@ -165,7 +165,7 @@ async def laugh(_, message):
       await message.reply_video(laughme, caption="*I Can't Control Laughing*~")
       return
 
-@bot.on_message(filters.regex("Neko bite") & filters.command("bite"))
+@bot.on_message(filters.command("bite"))
 async def bite(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/bite"
@@ -184,7 +184,7 @@ async def bite(_, message):
       await message.reply_video(biteme, caption="*Bites u with all my strength*~")
       return
 
-@bot.on_message(filters.regex("Neko poke") & filters.command("poke"))
+@bot.on_message(filters.command("poke"))
 async def poke(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/poke"
@@ -203,7 +203,7 @@ async def poke(_, message):
       await message.reply_video(pokeme, caption="*Poking You Continuously*~")
       return
 
-@bot.on_message(filters.regex("Neko tickle") & filters.command("tickle"))
+@bot.on_message(filters.command("tickle"))
 async def tickle(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/tickle"
@@ -222,7 +222,7 @@ async def tickle(_, message):
       await message.reply_video(tickleme, caption="*Tickling You Continuously Don't Laugh*~")
       return
 
-@bot.on_message(filters.regex("Neko wave") & filters.command("wave"))
+@bot.on_message(filters.command("wave"))
 async def wave(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/wave"
@@ -241,7 +241,7 @@ async def wave(_, message):
       await message.reply_video(waveme, caption="*My Hand Waving To You*~")
       return
 
-@bot.on_message(filters.regex("Neko thumbsup") & filters.command("thumbsup"))
+@bot.on_message(filters.command("thumbsup"))
 async def thumbsup(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/thumbsup"
@@ -260,7 +260,7 @@ async def thumbsup(_, message):
       await message.reply_video(thumbsupme, caption="*Hey Come Let's Thumbsup*~")
       return
 
-@bot.on_message(filters.regex("Neko stare") & filters.command("stare"))
+@bot.on_message(filters.command("stare"))
 async def stare(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/stare"
@@ -279,7 +279,7 @@ async def stare(_, message):
       await message.reply_video(stareme, caption="*What You Said Say It Again*~")
       return
 
-@bot.on_message(filters.regex("Neko cuddle") & filters.command("cuddle"))
+@bot.on_message(filters.command("cuddle"))
 async def cuddle(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/cuddle"
@@ -298,7 +298,7 @@ async def cuddle(_, message):
       await message.reply_video(cuddleme, caption="*Cuddle u with all my love*~")
       return
 
-@bot.on_message(filters.regex("Neko smile") & filters.command("smile"))
+@bot.on_message(filters.command("smile"))
 async def smile(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/smile"
@@ -317,7 +317,7 @@ async def smile(_, message):
       await message.reply_video(smileme, caption="*Is Smiles Looking Beautiful ?*~")
       return
 
-@bot.on_message(filters.regex("Neko baka") & filters.command("baka"))
+@bot.on_message(filters.command("baka"))
 async def baka(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/baka"
@@ -336,7 +336,7 @@ async def baka(_, message):
       await message.reply_video(bakame, caption="*You A Stupid Baka!*~")
       return
 
-@bot.on_message(filters.regex("Neko blush") & filters.command("blush"))
+@bot.on_message(filters.command("blush"))
 async def blush(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/blush"
@@ -356,7 +356,7 @@ async def blush(_, message):
       await message.reply_video(blushme, caption="*Oh {}~kun I Luv You*~".format(name1))
       return
 
-@bot.on_message(filters.regex("Neko think") & filters.command("think"))
+@bot.on_message(filters.command("think"))
 async def think(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/think"
@@ -376,7 +376,7 @@ async def think(_, message):
       await message.reply_video(thinkme, caption="*{}~kun Do You Love Me?*~".format(name))
       return
 
-@bot.on_message(filters.regex("Neko pout") & filters.command("pout"))
+@bot.on_message(filters.command("pout"))
 async def pout(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/pout"
@@ -396,7 +396,7 @@ async def pout(_, message):
       await message.reply_video(poutme, caption="*Oi {}~kun*~".format(name))
       return
 
-@bot.on_message(filters.regex("Neko facepalm") & filters.command("facepalm"))
+@bot.on_message(filters.command("facepalm"))
 async def facepalm(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/facepalm"
@@ -416,7 +416,7 @@ async def facepalm(_, message):
       await message.reply_video(facepalmme, caption="*Oh Shit {}~kun*~".format(name))
       return
 
-@bot.on_message(filters.regex("Neko wink") & filters.command("wink"))
+@bot.on_message(filters.command("wink"))
 async def wink(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/wink"
@@ -435,7 +435,7 @@ async def wink(_, message):
       await message.reply_video(winkme, caption="*Winks u with all my love*~")
       return
 
-@bot.on_message(filters.regex("Neko smug") & filters.command("smug"))
+@bot.on_message(filters.command("smug"))
 async def smug(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/smug"
@@ -454,7 +454,7 @@ async def smug(_, message):
       await message.reply_video(smugme, caption="*Hehehehehehehehe*~")
       return
 
-@bot.on_message(filters.regex("Neko cry") & filters.command("cry"))
+@bot.on_message(filters.command("cry"))
 async def cry(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/cry"
@@ -473,7 +473,7 @@ async def cry(_, message):
       await message.reply_video(cryme, caption="*I Can't Stop Crying*~")
       return
 
-@bot.on_message(filters.regex("Neko dance") & filters.command("dance"))
+@bot.on_message(filters.command("dance"))
 async def dance(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/dance"
@@ -493,7 +493,7 @@ async def dance(_, message):
       await message.reply_video(danceme, caption="*{}~kun. Can You Dance With Me*~".format(name))
       return
 
-@bot.on_message(filters.regex("Neko feed") & filters.command("feed"))
+@bot.on_message(filters.command("feed"))
 async def feed(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/feed"
@@ -513,7 +513,7 @@ async def feed(_, message):
       await message.reply_video(feedme, caption="*Open You Mouth {}~kun*~".format(name))
       return
 
-@bot.on_message(filters.regex("Neko shrug") & filters.command("shrug"))
+@bot.on_message(filters.command("shrug"))
 async def shrug(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/shrug"
@@ -533,7 +533,7 @@ async def shrug(_, message):
       await message.reply_video(shrugme, caption="*I Don't Know About It {}~kun*~".format(name))
       return
 
-@bot.on_message(filters.regex("Neko bored") & filters.command("bored"))
+@bot.on_message(filters.command("bored"))
 async def bored(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/bored"
@@ -554,7 +554,7 @@ async def bored(_, message):
       return
 
 
-@bot.on_message(filters.regex("Neko pat") & filters.command("pat"))
+@bot.on_message(filters.command("pat"))
 def pat(_, message):
     if message.reply_to_message:
        url = "https://nekos.best/api/v2/pat"
@@ -576,7 +576,7 @@ def pat(_, message):
       patme = e["results"][0]["url"]
       message.reply_video(patme, caption=random.choice(OWO).format(name))
 
-@bot.on_message(filters.regex("Neko hug") & filters.command("hug"))
+@bot.on_message(filters.command("hug"))
 def hug(_, message):
     
     if message.reply_to_message:
@@ -596,7 +596,7 @@ def hug(_, message):
        
        message.reply_video(hugme, caption="*Hugs u with all my love*~")
 
-@bot.on_message(filters.regex("Neko slap") & filters.command("slap"))      
+@bot.on_message(filters.command("slap"))      
 def slap(_, message):
     
     if message.reply_to_message:
@@ -616,7 +616,7 @@ def slap(_, message):
        
        message.reply_video(slapme, caption="Here... Take this from me.")
 
-@bot.on_message(filters.regex("Neko cute") & filters.command("cute"))
+@bot.on_message(filters.command("cute"))
 def cute(_, message):
     name = message.from_user.first_name         
     url = f"https://nekos.best/api/v2/neko"
@@ -627,7 +627,7 @@ def cute(_, message):
         cuteme, caption="Thank UwU {}-Kun  *smiles and hides ^~^*".format(name)
     )
 
-@bot.on_message(filters.regex("Neko waifu") & filters.command("waifu"))
+@bot.on_message(filters.command("waifu"))
 def waifu(_, message):
     name = message.from_user.first_name         
     url = f"https://nekos.best/api/v2/waifu"
@@ -638,7 +638,7 @@ def waifu(_, message):
         waifume, caption="Here I Am {}-Kun's *Waifu*".format(name)
     )
 
-@bot.on_message(filters.regex("Neko kitsune") & filters.command("kitsune"))
+@bot.on_message(filters.command("kitsune"))
 def kitsune(_, message):
     name = message.from_user.first_name         
     url = f"https://nekos.best/api/v2/kitsune"
@@ -649,7 +649,7 @@ def kitsune(_, message):
         kitsuneme, caption="Did You Called Me {}-Kun's *?*".format(name)
     )
 
-@bot.on_message(filters.regex("Neko sleep") | filters.regex("sleep") & filters.command("sleep"))
+@bot.on_message(filters.command("sleep"))
 def sleep(_, message):
     sleep_type = random.choice(("Text", "Gif", "Video"))
     if sleep_type == "Gif":
@@ -673,7 +673,7 @@ def sleep(_, message):
         z = ". . . (∪｡∪)｡｡｡zzzZZ"
         message.reply_text(z)
 
-@bot.on_message(filters.regex("Neko") & filters.command("neko"))
+@bot.on_message(filters.command("neko"))
 def neko(_, message):
     name = message.from_user.first_name
     ke = random.choice(aasf)
@@ -681,7 +681,7 @@ def neko(_, message):
         ke.format(name)
     )
 
-@bot.on_message(filters.regex("Neko start") & filters.command("start"))
+@bot.on_message(filters.command("start"))
 async def start(_, message):
       buttons = [[
           InlineKeyboardButton("[► Repo ◄]", url="https://github.com/Team-Aasf/Nekos-Best-Bot"),
@@ -702,7 +702,7 @@ async def start(_, message):
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
-@bot.on_message(filters.regex("Neko help") & filters.command("help"))
+@bot.on_message(filters.command("help"))
 def help(_, message):
     url = "https://nekos.best/api/v2/neko"
     r = requests.get(url)
