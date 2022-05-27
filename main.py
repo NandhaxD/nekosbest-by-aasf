@@ -14,10 +14,11 @@ API_HASH = os.environ.get('API_HASH', None)
 TOKEN = os.environ.get('TOKEN', None)
 
 # For Local Deploy:
-
-API_ID = "14676558"
-API_HASH = "b3c4bc0ba6a4fc123f4d748a8cc39981"
-TOKEN = "5391818261:AAGoqUgChXsoxTF4NDbD788ETPDxpX9Sc-0"
+"""
+API_ID = ""
+API_HASH = ""
+TOKEN = ""
+"""
 
 bot = Client(
     "NekoBest" ,
