@@ -52,42 +52,7 @@ aasf = (
  "Hello UwU {} I'm here to play, Meow"
 )
 
-help_text = """
-• **Start : **`/start To Start The Bot`
-• **Help : **`/help To Send Help Message`
-• **Kiss : **`/kiss To Kiss A Person`
-• **Highfive : **`/highfive To Highfive A Person`
-• **Happy : **`/happy To Makes A Person Happy`
-• **Laugh : **`/laugh To Makes A Person Laugh`
-• **Bite : **`/bite To Bite A Person`
-• **Poke : **`/poke To Poke A Person`
-• **Tickle : **`/tickle To Tickle A Person`
-• **Wave : **`/wave To Wave A Person`
-• **Thumbsup : **`/thumbsup To Thumbsup A Person`
-• **Stare : **`/stare To Makes A Person Stare`
-• **Cuddle : **`/cuddle To Cuddle A Person`
-• **Smile : **`/smile To Makes A Person Smile`
-• **Baka : **`/baka To Say A Person Baka`
-• **Blush : **`/blush To Makes A Person Blush`
-• **Think : **`/think To Makes A Person Think`
-• **Pout : **`/pout To Makes A Person Pout`
-• **Facepalm : **`/facepalm To Makes A Person Facepalm`
-• **Wink : **`/wink To Makes A Person Wink`
-• **Smug : **`/smug To Makes A Person Smug`
-• **Cry : **`/cry To Makes A Person Cry`
-• **Dance : **`/dance To Makes A Person Dance`
-• **Feed : **`/feed To Feed A Person`
-• **Shrug : **/shrug To Shrug A Person`
-• **Bored : **`/bored To Makes A Person Bored`
-• **Pat : **`/pat To Pat A Person`
-• **Hug : **`/hug To Hug A Person`
-• **Slap : **`/slap To Slap A Person`
-• **Cute : **`/cute To Say Me Cute`
-• **Waifu : **`/waifu To Send Random Waifu Image`
-• **Kitsune : **`/kitsune To Send Random Kitsune Image`
-• **Sleep : **`/sleep To Say I Am Going To Sleep`
-• **Neko : **`/neko To Get Random Neko quotes`
-"""
+help_text = "**Hoi {} I Am A Pyrogram Based Bot Using Nekos.best**"
 
 @bot.on_message(filters.command("kiss"))
 async def kiss(_, message):
@@ -704,15 +669,11 @@ async def start(_, message):
 
 @bot.on_message(filters.command("help"))
 def help(_, message):
-    url = "https://nekos.best/api/v2/neko"
-    r = requests.get(url)
-    e = r.json()
-    pics = e["results"][0]["url"]
+    pic = "https://telegra.ph/file/bdfbcff53832da88189d1.jpg"
     buttons = [[
-        InlineKeyboardButton("[► Repo ◄]", url="https://github.com/Team-Aasf/Nekos-Best-Bot"),
-        InlineKeyboardButton("[► Deploy ◄]", url="https://heroku.com/deploy?template=https://github.com/Team-Aasf/Nekos-Best-Bot")
+        InlineKeyboardButton("[► Read Here ◄]", url="https://telegra.ph/NekoBesBot-05-26"),
     ]]
-    message.reply_photo(pics, caption=help_text,
+    message.reply_photo(pic, caption=help_text.format(message.from_user.mention),
                              reply_markup=InlineKeyboardMarkup(buttons))
 
 bot.run()
