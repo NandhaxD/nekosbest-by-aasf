@@ -53,7 +53,7 @@ aasf = (
  "Hello UwU {} I'm here to play, Meow"
 )
 
-help_text = "**Hoi {} I Am A Pyrogram Based Bot Using Nekos.best**"
+help_text = "**Hoi {} I Am A Pyrogram Based Telegram Bot Using Nekos.best Click The Bellow But To Check My Commands**"
 
 @bot.on_message(filters.command("kiss"))
 async def kiss(_, message):
