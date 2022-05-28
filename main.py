@@ -354,7 +354,7 @@ async def pout(_, message):
        await message.reply_to_message.reply_video(poutme, caption="*{} pouts {}*~".format(name1, name2))
        return
     else:
-      url = "https://nekos.best/api/v2/poutme"
+      url = "https://nekos.best/api/v2/pout"
       r = requests.get(url)
       e = r.json()
       name = message.from_user.first_name
